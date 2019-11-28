@@ -1,5 +1,4 @@
 # TensorFlow and tf.keras
-
 import tensorflow as tf
 import tensorflow.keras as keras
 
@@ -15,7 +14,7 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 
 # scale image data from (0,255) to (0,1)
-train_images = train_images / 255.0
+train_images = train_images / 255.0 
 test_images = test_images / 255.0
 
 # build a sequence model with two hidden layers with 64 nodes and one ouput layer with 10 nodes
@@ -36,7 +35,7 @@ model.fit(train_images, train_labels, epochs=10)
 model_json = model.to_json()
 with open("basic_classification_model.json", "w") as json_file:
     json_file.write(model_json)
-
+ 
 # serialize weights to HDF5
 model.save_weights("basic_classification_weights.h5")
 print("Saved model_basic_classification to disk")
